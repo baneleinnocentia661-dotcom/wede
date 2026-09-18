@@ -1,0 +1,67 @@
+/* RESET - makes all pages same */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #a28f8f;
+}
+
+/* BLUE NAV BAR - like in your photo */
+nav {
+  background-color: #007bff;
+  padding: 15px;
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* THIS MAKES YOUR PRODUCT IMAGES LINE UP */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* THIS MAKES PICTURES SMALL AND SAME SIZE */
+.responsive-image {
+  width: 100%;
+  max-width: 280px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* FOR PHONE - 1 per row, for tablet 2 per row */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .responsive-image {
+    max-width: 100%;
+  }
+}
